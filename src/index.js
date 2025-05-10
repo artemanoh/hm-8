@@ -70,6 +70,10 @@ function addUserToLocalStorage(userData, key = "userInformation") {
 }
 
 function removeAllFromLocalStorage() {
+    if (localStorage.length === 0) {
+    reportingText.textContent = "Немає даних для видалення!";
+    return;
+  }
   localStorage.clear();
   reportingText.textContent = "Дані успішно видалено😥!";
 }
